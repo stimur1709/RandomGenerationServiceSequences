@@ -17,7 +17,7 @@ public class GreetingControllers {
     @SendTo("/topic/result")
     public ResponseMessage result(RequestMessage requestMessage) {
         sequenceNumber = new SequenceNumber(Integer.parseInt(requestMessage.getSize()));
-        return new ResponseMessage(HtmlUtils.htmlEscape(sequenceNumber.getGeneratedSequenceList().toString()));
+        return new ResponseMessage(HtmlUtils.htmlEscape("Последовательность сгенерирована"));
     }
 
     @MessageMapping("/generate")
